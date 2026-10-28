@@ -161,8 +161,8 @@ export default function DeveloperTerminal() {
                   <BookOpen size={15} />
                   <strong>VoltGrid</strong>
                 </div>
-                <p>Microservices EV charging station load balancer.</p>
-                <span className="tag tag-sm">Spring Cloud • Netflix Eureka</span>
+                <p>SOA microservices EV charging station load balancer.</p>
+                <span className="tag tag-sm">SOA • Spring Cloud • Eureka</span>
               </div>
             </div>
 

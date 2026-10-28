@@ -21,11 +21,12 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
 
-  const filterOptions = ["All", "Frontend", "Full Stack", "DTI"];
+  const filterOptions = ["All", "Frontend", "Full Stack", "SOA", "DTI"];
 
   const filteredProjects = projects.filter((project) => {
     if (selectedFilter === "Frontend") return project.category.toLowerCase().includes("frontend");
     if (selectedFilter === "Full Stack") return project.category.toLowerCase().includes("full stack");
+    if (selectedFilter === "SOA") return project.category.toLowerCase().includes("soa");
     if (selectedFilter === "DTI") return project.category.toLowerCase().includes("dti");
     return true;
   });
