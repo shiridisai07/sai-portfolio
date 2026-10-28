@@ -31,10 +31,10 @@ export const personalProfile = {
   email: "2400031075cse1@gmail.com",
   phone: "+91 9989472522",
   linkedin: "https://www.linkedin.com/in/chinnam-shiridi-sai-a57a8931a/",
-  github: "https://github.com/",
+  github: "https://github.com/shiridisai07",
   resumeUrl: "/resume.pdf",
   social: {
-    github: "https://github.com/",
+    github: "https://github.com/shiridisai07",
     linkedin: "https://www.linkedin.com/in/chinnam-shiridi-sai-a57a8931a/",
     email: "mailto:2400031075cse1@gmail.com",
     phone: "tel:+919989472522",
@@ -126,7 +126,7 @@ export const projects = [
     ],
     architecture:
       "Client-side Single Page Application architecture utilizing modular vanilla JavaScript for dynamic DOM rendering, event handling, and form validation, styled with custom responsive CSS3.",
-    github: "https://github.com/",
+    github: "https://github.com/shiridisai07",
     demo: "",
   },
   {
@@ -159,7 +159,7 @@ export const projects = [
     ],
     architecture:
       "Layered enterprise MVC architecture comprising Spring Boot REST controllers, service abstraction layer, Spring Data JPA / Hibernate persistence layer, and a normalized MySQL relational database.",
-    github: "https://github.com/",
+    github: "https://github.com/shiridisai07",
     demo: "",
   },
   {
@@ -192,7 +192,7 @@ export const projects = [
     ],
     architecture:
       "Distributed microservices architecture utilizing Spring Cloud Netflix Eureka for service registry, Spring Cloud Gateway for ingress routing, and independent Spring Boot services backed by MySQL.",
-    github: "https://github.com/",
+    github: "https://github.com/shiridisai07",
     demo: "https://www.linkedin.com/pulse/voltgrid-smart-ev-charging-grid-load-balancing-chinnam-shiridi-sai-9gdnf/",
   },
   {
@@ -222,7 +222,7 @@ export const projects = [
     ],
     architecture:
       "Modular Python processing pipeline leveraging OpenCV core image manipulation matrix operations and NumPy multi-dimensional array calculations.",
-    github: "https://github.com/",
+    github: "https://github.com/shiridisai07",
     demo: "",
   },
 ];
