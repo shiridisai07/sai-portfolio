@@ -4325,3 +4325,14 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center !important;
   }
 }
+
+/* 3D Perspective Preservation for Page View */
+.dedicated-page-view-container {
+  perspective: 1600px !important;
+  transform-style: preserve-3d !important;
+}
+
+.dedicated-page-content {
+  transform-style: preserve-3d !important;
+  will-change: transform, opacity, filter !important;
+}

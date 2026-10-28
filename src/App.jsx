@@ -48,6 +48,44 @@ export default function App() {
     return "home";
   });
   const [viewMode, setViewMode] = useState("scroll"); // "scroll" | "pages"
+  const [direction, setDirection] = useState(1);
+
+  const pageVariants = {
+    initial: (dir) => ({
+      opacity: 0,
+      scale: 0.91,
+      rotateY: dir > 0 ? 18 : -18,
+      rotateX: 4,
+      z: -120,
+      filter: "blur(6px)",
+      transformOrigin: dir > 0 ? "right center" : "left center",
+    }),
+    animate: {
+      opacity: 1,
+      scale: 1,
+      rotateY: 0,
+      rotateX: 0,
+      z: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+    exit: (dir) => ({
+      opacity: 0,
+      scale: 0.91,
+      rotateY: dir > 0 ? -18 : 18,
+      rotateX: -4,
+      z: -120,
+      filter: "blur(6px)",
+      transformOrigin: dir > 0 ? "left center" : "right center",
+      transition: {
+        duration: 0.35,
+        ease: [0.7, 0, 0.84, 0],
+      },
+    }),
+  };
 
   // Listen to hash change
   useEffect(() => {
@@ -62,6 +100,8 @@ export default function App() {
   }, []);
 
   const handleSelectBlock = (id) => {
+    const nextIdx = BLOCKS.findIndex((b) => b.id === id);
+    setDirection(nextIdx >= currentIndex ? 1 : -1);
     setActiveBlock(id);
     if (viewMode === "scroll") {
       const el = document.getElementById(id);
@@ -89,11 +129,13 @@ export default function App() {
   const currentIndex = BLOCKS.findIndex((b) => b.id === activeBlock);
 
   const goToNextBlock = () => {
+    setDirection(1);
     const nextIdx = (currentIndex + 1) % BLOCKS.length;
     handleSelectBlock(BLOCKS[nextIdx].id);
   };
 
   const goToPrevBlock = () => {
+    setDirection(-1);
     const prevIdx = currentIndex === 0 ? BLOCKS.length - 1 : currentIndex - 1;
     handleSelectBlock(BLOCKS[prevIdx].id);
   };
@@ -201,11 +243,12 @@ export default function App() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeBlock}
+                custom={direction}
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
                 className="dedicated-page-content"
-                initial={{ opacity: 0, scale: 0.96, rotateX: 6 }}
-                animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-                exit={{ opacity: 0, scale: 0.96, rotateX: -6 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
               >
                 {activeBlock === "home" && <Hero />}
 

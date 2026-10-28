@@ -32,7 +32,7 @@ export const personalProfile = {
   phone: "+91 9989472522",
   linkedin: "https://www.linkedin.com/in/chinnam-shiridi-sai-a57a8931a/",
   github: "https://github.com/shiridisai07",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "./resume.pdf",
   social: {
     github: "https://github.com/shiridisai07",
     linkedin: "https://www.linkedin.com/in/chinnam-shiridi-sai-a57a8931a/",

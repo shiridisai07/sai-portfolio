@@ -22,6 +22,7 @@ import {
   certifications,
 } from "../data/portfolioData.js";
 import profileImg from "../assets/profile.jpg";
+import resumePdf from "../assets/resume.pdf";
 import ThreeDCard from "./ThreeDCard.jsx";
 
 export default function Hero() {
@@ -140,7 +141,7 @@ export default function Hero() {
             </a>
 
             <a
-              href={personalProfile.resumeUrl}
+              href={resumePdf || personalProfile.resumeUrl || "./resume.pdf"}
               target="_blank"
               rel="noopener noreferrer"
               download="CHINNAM_SHIRIDI_SAI_Resume.pdf"
